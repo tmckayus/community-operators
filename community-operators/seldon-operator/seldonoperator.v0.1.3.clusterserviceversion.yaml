@@ -9,7 +9,7 @@ metadata:
     capabilities: Seamless Upgrades
     categories: "Logging & Tracing"
     description: The Seldon operator for management, monitoring and operations of machine learning systems through the Seldon Engine. Once installed, the Seldon Operator provides multiple functions which facilitate the productisation, monitoring and maintenance of machine learning systems at scale.
-    containerImage: seldonio/seldon-core-operator:0.3.1
+    containerImage: seldonio/seldon-core-operator:0.3.2-SNAPSHOT
     createdAt: 2019-05-21T15:00:00Z
     repository: https://github.com/SeldonIO/seldon-operator
     alm-examples: '[{"apiVersion": "machinelearning.seldon.io/v1alpha2","kind": "SeldonDeployment","metadata": {"labels": {"app": "seldon"},"name": "seldon-model"},"spec": {"name": "test-deployment","oauth_key": "oauth-key","oauth_secret": "oauth-secret","predictors": [{"componentSpecs": [{"spec": {"containers": [{"image": "seldonio/mock_classifier:1.0","imagePullPolicy": "IfNotPresent","name": "classifier","resources": {"requests": {"memory": "1Mi"}}}],"terminationGracePeriodSeconds": 1}}],"graph": {"children": [],"name": "classifier","endpoint": {"type" : "REST"},"type": "MODEL"},"name": "example","replicas": 1,"labels": {"version" : "v1"}}]}}]'
@@ -292,7 +292,7 @@ spec:
                   value: '8000'
                 - name: ENGINE_PROMETHEUS_PATH
                   value: prometheus
-                image: seldonio/seldon-core-operator:0.3.1
+                image: seldonio/seldon-core-operator:0.3.2-SNAPSHOT
                 imagePullPolicy: IfNotPresent
                 name: manager
                 ports:
